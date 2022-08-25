@@ -1,0 +1,197 @@
+<!-- "I Anthony Bauld, certify that this material is my original work. No other person's work has been used without due acknowledgement. 
+I have not made my work available to anyone else."-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin Flip - Anthony Bauld </title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Creates a "App" div in which the main function will render. -->
+    <div id="App"></div>
+    <!-- Create's a script using a standalone build of Babel for usage in browsers and other non-Node.js environments. -->
+    <script type="text/babel"> // Creates a "TailsHead" react component that will render the resulted outcome of the coin flip. 
+         class TailsHead extends React.Component {
+             // Creates a component lets you return multiple elements in a render() method.
+             render() {
+                 // Returns components.
+                 return (
+                     // Creates a "coinflip" div which will render the prop.face.
+				    <div id="coinflip">
+                        {this.props.face}
+                    </div>
+                 );
+             }
+         }
+        // Creates a "Coin" react component, which has constructor for the props and state.
+         class Coinflip extends React.Component {
+             // Creates a constructor for props.
+             constructor(props) {
+                 // Creates a super that will call the constructor of its parent class.
+                 super(props);
+                 // Sets the state for number, type, and side.
+                 this.state = {
+                     // Sets the number for the state.
+                     number: 1,
+                     // Sets the type for the state.
+                     type: "Normal",
+                     // Sets the side for the state.
+                     side: []
+                 }
+             }
+             // Creates a "add" function that increases the number of coins to be flipped.
+             add() {
+                 // When the add button is pressed, the state number is increased by one.
+                 this.setState({ number: this.state.number + 1 })
+             }
+             // Creates a "subtract" function that decreases the number of coins to be flipped.
+             subtract() {
+                 // When the add button is greater than or equal to two, the state can be subtracted.
+                 if (this.state.number >= 2) {
+                     // When the add button is pressed, the state number is decreased by one.
+                     this.setState({ number: this.state.number - 1 })
+                 } else {
+                     // When the state button is not pressed or subtracted always equal one.
+                     this.setState({ number: 1 })
+                 }
+             }
+             // Creates a function called "switchType" that allows the user to choose between normal and biased flip types.
+             switchType() {
+                 // This statement should be executed if the type's state is "normal".
+                 if (this.state.type == "Normal") {
+                     // Sets the state type to "biased".
+                     this.setState({ type: "Biased" })
+                 } else {
+                     // Sets the state type to "normal".
+                     this.setState({ type: "Normal" })
+                 }
+             }
+             // Create's a function called "flipCoin", which calculates the outcome of the coins being flipped.
+             flipCoin() {
+                 // This statement should be executed if the type's state is "normal".
+                 if (this.state.type == "Normal") {
+                     // Creates the "coins" variable array.
+                     let coins = [];
+                     // Creates the "sides" variable, which will be used to determine which side it will land on.
+                     let sides = this.props.coin.length;
+                     // The "total" variable is created and will be used to set the state number.
+                     let total = this.state.number;
+                     // Creates a for loop that calculates the outcome of the coin's landing side.
+                     for (let i = 0; i < total; i++) {
+                         // For the outcome of the flip, generates a random number.
+                         let randomNum = Math.floor(Math.random() * sides);
+                         // Creates a coin constructor.
+                         coins[i] = {
+                             // Sets the text to randomNum's prop coin.
+                             text: this.props.coin[randomNum],
+                             // Sets the key to the coin's [i].
+                             key: i
+                         }
+                     }
+                     // Sets the side's state to coins.
+                     this.setState({
+                         side: coins
+                     });
+                 // This statement should be executed if the type's state is "biased".
+                 } else if (this.state.type == "Biased") {
+                     // Creates the "coins" variable array.
+                     let coins = [];
+                     // Creates the "sides" variable, which will be used to determine which side it will land on.
+                     let sides = this.props.coin.length;
+                     // The "total" variable is created and will be used to set the state number.
+                     let total = this.state.number;
+                     // Creates a for loop that calculates the outcome of the coin's landing side.
+                     for (let i = 0; i < total; i++) {
+                         // For the outcome of the flip, generates a random number between 1-1000.
+                         let randomNum2 = Math.floor(Math.random() * 1000) + 1;
+                         // Execute this block of code if randomNum is less than 750.
+                         if (randomNum2 < 750) {
+                            // Prints a console log to verify the outcome of the flip.
+                            console.log(randomNum2 + " < 750 equals heads");
+                             // Sets the side's value to one.
+                             sides = 1;
+                             coins[i] = {
+                                 text: this.props.coin[sides],
+                                 key: i
+                             }
+                         // Execute this block of code if randomNum is greater than 750.
+                         } else if (randomNum2 > 750) {
+                            // Prints a console log to verify the outcome of the flip.
+                            console.log(randomNum2 + " > 750 equals tails");
+                             // Sets the side's value to zero.
+                             sides = 0;
+                             // Creates a coin constructor.
+                             coins[i] = {
+                                 // Sets the text to randomNum's prop coin.
+                                 text: this.props.coin[sides],
+                                 // Sets the key to the coin's [i].
+                                 key: i
+                             }
+                         }
+                     }
+                     // Sets the side's state to coins.
+                     this.setState({
+                         side: coins
+                     });
+                 }
+             }
+             // Creates a component lets you return multiple elements in a render() method.
+             render() {
+                 // Creates a "results" variable which will be used to display the coin flip results.
+                 let results = "";
+                 // Returns components.
+                 return (
+                     // Creates a section in which buttons and text will be displayed and rendered.
+                     
+				<section>
+					<div id ="section">
+						<div id="userDiv">
+							<h2 className="amountButton">Amount of Coins: {this.state.number}</h2>
+							<button className="addButton" onClick={this.add.bind(this)}>Add</button>
+							<button className="subtractButton" onClick={this.subtract.bind(this)}>Subtract</button>
+							<br/>
+							<h2 className="buttonState">Type: {this.state.type}</h2>
+							<button className="typeButton" onClick={this.switchType.bind(this)}>Switch Type's</button>
+						</div>
+						<div id="mainDiv">
+							<div id="flipCoin">
+								<h2 id="flipthecoin">Flip the Coin!</h2>
+								<button id="coinflipButton" onClick={this.flipCoin.bind(this)}>Flip Coin</button>
+							</div>
+							<div id="resultDiv">
+								<h2 id="resultsTitle">Results</h2>
+								<div id="results">
+                                         {this.state.side.map(
+                                             ({key, text}) =>
+									<TailsHead key={key} face={text}/>)}
+								</div>
+								<h2>{results}</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+                 );
+             }
+         }
+         // Creates a react component called "App" that returns the coin values tails and head.
+         class App extends React.Component {
+             // Creates a component lets you return multiple elements in a render() method.
+             render() {
+                 // Returns components.
+                 return (
+                     // Sets the value of coins to "tails", and "heads". 
+				<Coinflip coin={["Tails", "Heads"]}/>
+                 )
+             }
+         }
+         // Creates a const "landing" variable that will be utilised to obtain the app div's element id.
+         const landing = document.getElementById("App");
+         // Creates a ReactDom package with DOM-specific methods.
+         ReactDOM.render(
+				<App/>, landing);
+			</script>
+  </body>
+</html>
