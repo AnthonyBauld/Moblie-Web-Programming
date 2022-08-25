@@ -1,0 +1,117 @@
+/*
+    // "I Anthony Bauld, certify that this material is my original work. No other person's work has been used without due acknowledgement. 
+    // I have not made my work available to anyone else."
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@700&display=swap");
+* {
+  color: white;
+  background-color: #1a1c24;
+  overflow: hidden;
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1a1c24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+div#coinflip {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 35px;
+  text-align: center;
+}
+h2.amountButton {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+h2.buttonState {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+h2#flipthecoin {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+h2#resultsTitle {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+button.amountButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #1a1d29;
+  text-align: center;
+  cursor: pointer;
+  margin: center;
+  margin-top: 10px;
+  background-image: radial-gradient(125% 125%, #fee61a, black);
+}
+button.addButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #1a1d29;
+  text-align: center;
+  cursor: pointer;
+  margin: center;
+  margin-top: 10px;
+  background-image: radial-gradient(125% 125%, #fee61a, black);
+}
+button.subtractButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #1a1d29;
+  text-align: center;
+  cursor: pointer;
+  margin: center;
+  margin-top: 10px;
+  background-image: radial-gradient(125% 125%, #fee61a, black);
+}
+button.typeButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #1a1d29;
+  text-align: center;
+  cursor: pointer;
+  margin: center;
+  margin-top: 10px;
+  background-image: radial-gradient(125% 125%, #fee61a, black);
+}
+button#coinflipButton {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  color: #1a1d29;
+  text-align: center;
+  cursor: pointer;
+  margin: center;
+  margin-top: 10px;
+  background-image: radial-gradient(125% 125%, #fee61a, black);
+}
