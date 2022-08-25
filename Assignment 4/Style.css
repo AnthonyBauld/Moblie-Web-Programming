@@ -1,0 +1,80 @@
+/*
+    // "I Anthony Bauld, certify that this material is my original work. No other person's work has been used without due acknowledgement. 
+    // I have not made my work available to anyone else."
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: 'Patrick Hand', cursive;
+     overflow: hidden;
+     font-size: 25px;
+}
+ h1 {
+     margin: 25px;
+     color: white;
+     font-size: 35px;
+     font-family: 'Bebas Neue', cursive;
+}
+ body {
+     background-color: #1a1c24;
+}
+ .app {
+     width: 700px;
+     min-height: 750px;
+     background: #2B2C37;
+     text-align: center;
+     margin: 50px auto;
+}
+ .list-form {
+     margin-bottom: 32px;
+}
+ .input {
+    background: transparent;
+     border-radius: 15px 0px 0px 15px;
+     border: 2px solid darkkhaki;
+     color: white; 
+     padding: 14px 35px 14px 16px;
+     outline: none;
+     width: 520px;
+}
+ .input.edit {
+     margin-top: 5px;
+     border: 2px solid darkkhaki;
+}
+ .button {
+     border: none;
+     border-radius: 0 4px 4px 0;
+     background: radial-gradient( 125% 125%, #FEE61A, black);
+     color: black;
+     padding: 16px;
+}
+ .button.edit {
+     background: radial-gradient( 125% 125%, #FEE61A, black);
+     padding: 16px;
+}
+ .row {
+     align-items: center;
+     background: radial-gradient( 125% 125%, #FEE61A, black);
+     border-radius: 15px;
+     color: black;
+     display: flex;
+     justify-content: space-between;
+     margin: 10px auto;
+     padding: 18px;
+     width: 87%;
+}
+ .react-icons {
+     display: flex;
+     cursor: pointer;
+     font-size: 30px;
+}
+ .delete-icon {
+     color: black;
+     margin-right: 2.5px;
+}
+ .edit-icon {
+     color: black;
+}
