@@ -1,0 +1,63 @@
+<!-- "I Anthony Bauld, certify that this material is my original work. No other person's work has been used without due acknowledgement. 
+      I have not made my work available to anyone else."-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maps and Geolocation - Anthony. Bauld
+    </title>
+    <!-- Source: Bootstrap 4.0.0  CSS & JS from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script> 
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfgVQ3zyGy9k-GuVtHNOQd72vaXyRQBHg&callback=initMap">
+</script>
+    <!-- Javascript -->
+    <script src="js/mapsandgeo.js">
+    </script>
+    <script src="js/bike.js">
+    </script>
+    <!-- CSS Style sheet for Maps/Geolocation -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <!-- Source: Bootstrap 4.0.0  Navbar -> https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <div class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="">
+          <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Hamiliton: Bike Racks
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon">
+          </span>
+        </button>
+        <!-- Source: Bootstrap 4.0.0 Buttons -> https://getbootstrap.com/docs/4.0/components/buttons/ -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <input class="btn btn-primary" type="button" id="myaddress" value="Find My Address">
+            <input class="btn btn-primary" type="button" id="showall" value="Show All">
+            <input class="btn btn-primary" type="button" id="multifilter" value="Filter: Multi-Ring">
+            <input class="btn btn-primary" type="button" id="hammerfilter" value="Filter: Hammer Hoop">
+            <input class="btn btn-primary" type="button" id="directions" value="Directions">
+          </ul>
+          <!-- Source: Bootstrap 4.0.0 Search bar -> https://getbootstrap.com/docs/4.0/components/forms/ -->
+          <form class="form-inline my-2 my-lg-0">
+            <span id="coords" style="font-size:22px;"></span>
+            <input class="form-control mr-sm-2" type="text" id="search" placeholder="Enter Street Address" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="button" id="searchbutton">Search
+            </button>
+          </form>
+        </div>
+        </div>
+      </nav>
+    <!-- Map Div -->
+    <div id="map">
+    </div>
+  </body>
+</html>
